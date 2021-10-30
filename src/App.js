@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Footer from './components/Footer';
 import Header from "./components/Header";
 import AddNewProduct from './components/pages/AddNewProducts';
 import Home from "./components/pages/Home";
@@ -35,6 +36,7 @@ export default function App() {
           </Route>
           <Route  path="*" component={NotFound}/>
         </Switch>
+      <Footer/>
       </Router>
     </AuthProvider>
   );

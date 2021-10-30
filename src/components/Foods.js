@@ -11,7 +11,8 @@ export default function Foods() {
   
   return (
     <div>
-      <Row md={3} className="g-3 my-4">
+      <h2 className="text-center subtitle mt-2 pt-4">Our Foods</h2>
+      <Row md={3} className="g-3 my-3">
         {foods.map((food) => (
             <Col key={food.title}>
             <Card >

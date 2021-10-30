@@ -46,40 +46,35 @@ export default function SingleFood() {
             <h2 className="fw-bold">Confirm Order</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="pt-3">
               <input
-                {...register("customer_name")}
+                {...register("customer_name", { required: true })}
                 placeholder="Your Name"
                 value={user.displayName}
-                required
               />
               <input
-                {...register("customer_email")}
+                {...register("customer_email",{ required: true })}
                 placeholder="Your email"
                 value={user.email}
-                required
               />
               <input
               type="number"
-                {...register("customer_phone_number")}
+                {...register("customer_phone_number", { required: true })}
                 placeholder="Contact Number"
-                required
               />
               <input
-                {...register("product_name")}
+                {...register("product_name",{ required: true })}
                 placeholder="Product title"
-                value={food.title}
-                required
+                value={food?.title}
               />
               <input
-                {...register("price")}
+                {...register("price", { required: true })}
                 placeholder="Your food price"
-                value={`$ ${food.price}`}
+                value={`$ ${food?.price}`}
                 required
               />
-              <input type="text" name="" value={food.image} {...register("image")} />
+              <input type="text" name="" value={food?.image} {...register("image",{ required: true })} />
               <textarea
-                {...register("address")}
+                {...register("address", { required: true })}
                 placeholder="Your Address"
-                required
               />
               
               <input
