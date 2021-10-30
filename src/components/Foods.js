@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Foods() {
   const [foods, setFoods] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/foods").then((res) => setFoods(res.data));
+    axios.get("https://blooming-falls-29149.herokuapp.com/foods").then((res) => setFoods(res.data));
   }, []);
   
   return (

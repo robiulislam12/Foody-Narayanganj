@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Row } from "react-bootstrap";
-import food1 from "../assets/food1.png";
-import food2 from "../assets/Group-1.png";
+import food1 from "../assets/burger.svg";
+import food2 from "../assets/chicken.svg";
+import food6 from "../assets/desert.svg";
+import food3 from "../assets/pasta.svg";
+import food4 from "../assets/pizza.svg";
+import food5 from "../assets/sandwich.svg";
 
 export default function HeroSection() {
 
@@ -28,22 +32,22 @@ export default function HeroSection() {
                 <Row>
                   <h1>Our Best Food for you</h1>
                   <div onClick={handleImgClick} className="col-md-2 col-sm-6">
-                      <img style={{cursor: 'pointer'}} src={food1} alt="" className="rounded-circle" />
+                      <img style={{cursor: 'pointer'}} src={food1} alt=""  />
                   </div>
                   <div onClick={handleImgClick} className="col-md-2 col-sm-6">
-                      <img style={{cursor: 'pointer'}} src={food2} alt="" className="rounded-circle" />
+                      <img style={{cursor: 'pointer'}} src={food2} alt=""  />
                   </div>
                   <div onClick={handleImgClick} className="col-md-2 col-sm-6">
-                      <img style={{cursor: 'pointer'}} src={food1} alt="" className="rounded-circle" />
+                      <img style={{cursor: 'pointer'}} src={food3} alt=""  />
                   </div>
                   <div onClick={handleImgClick} className="col-md-2 col-sm-6">
-                      <img style={{cursor: 'pointer'}} src={food2} alt="" className="rounded-circle" />
+                      <img style={{cursor: 'pointer'}} src={food4} alt=""  />
                   </div>
                   <div onClick={handleImgClick} className="col-md-2 col-sm-6">
-                      <img style={{cursor: 'pointer'}} src={food1} alt="" className="rounded-circle" />
+                      <img style={{cursor: 'pointer'}} src={food5} alt=""  />
                   </div>
                   <div onClick={handleImgClick} className="col-md-2 col-sm-6">
-                      <img style={{cursor: 'pointer'}} src={food2} alt="" className="rounded-circle" />
+                      <img style={{cursor: 'pointer'}} src={food6} alt=""  />
                   </div>
                 </Row>
                 <Row>

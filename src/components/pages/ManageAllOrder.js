@@ -5,7 +5,7 @@ export default function Order() {
     const [orders, setOrders] = useState([]);
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/orders')
+        axios.get('https://blooming-falls-29149.herokuapp.com/orders')
         .then(res => setOrders(res.data))
     },[])
 

@@ -5,7 +5,7 @@ export default function Order() {
     const [orders, setOrders] = useState([]);
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/orders')
+        axios.get('https://blooming-falls-29149.herokuapp.com/orders')
         .then(res => setOrders(res.data))
     },[])
 
@@ -13,7 +13,7 @@ export default function Order() {
     const deleteOrder = id =>{
         const isAgree = prompt('Are you sure? If you want, type "Yes"');
         if(isAgree.toLowerCase() === 'yes'){
-            axios.delete(`http://localhost:5000/order/${id}`)
+            axios.delete(`https://blooming-falls-29149.herokuapp.com/order/${id}`)
             .then(res => {
                 if(res.data.deletedCount > 0){
                     alert('Delete Successful')

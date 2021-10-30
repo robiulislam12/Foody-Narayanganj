@@ -15,13 +15,13 @@ export default function SingleFood() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/foods/${id}`)
+      .get(`https://blooming-falls-29149.herokuapp.com/foods/${id}`)
       .then((res) => setFood(res.data));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   const onSubmit = (data) => {
-    axios.post("http://localhost:5000/order", data).then((res) => {
+    axios.post("https://blooming-falls-29149.herokuapp.com/order", data).then((res) => {
       if (res.data.insertedId) {
         alert("Successfully order send!");
         reset();

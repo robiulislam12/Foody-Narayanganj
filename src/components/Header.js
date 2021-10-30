@@ -6,7 +6,7 @@ import useAuth from "../hooks/useAuth";
 
 
 export default function Header() {
-  const { signInUsingGoogle, user, logOut } = useAuth();
+  const { user, logOut } = useAuth();
 
   return (
     <>
@@ -28,7 +28,7 @@ export default function Header() {
               {user.displayName ? (
                 <>
                   <NavDropdown title="Orders" id="collasible-nav-dropdown">
-                    <NavDropdown.Item as={Link} to="order">
+                    <NavDropdown.Item as={Link} to="orders">
                       My Orders
                     </NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="manageOrder">
@@ -44,7 +44,9 @@ export default function Header() {
                   </Button>
                 </>
               ) : (
-                <Button onClick={signInUsingGoogle}>Login</Button>
+                <Link to="/login">
+                  <Button>Login</Button>
+                </Link>
               )}
             </Nav>
           </Navbar.Collapse>

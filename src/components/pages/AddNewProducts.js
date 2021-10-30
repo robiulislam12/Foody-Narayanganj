@@ -6,7 +6,7 @@ import "../../Styles/AddNewProduct.css";
 export default function AddNewProduct() {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    axios.post("http://localhost:5000/addNewProduct", data).then((res) => {
+    axios.post("https://blooming-falls-29149.herokuapp.com/addNewProduct", data).then((res) => {
       if (res.data.insertedId) {
         alert("Food Added Successfully");
         reset();
