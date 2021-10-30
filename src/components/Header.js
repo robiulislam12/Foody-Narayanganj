@@ -1,41 +1,53 @@
 import React from "react";
-import { Button, Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
-import useFirebase from "../hooks/useFirebase";
+import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link } from 'react-router-dom';
+import logo from "../assets/logo.svg";
+import useAuth from "../hooks/useAuth";
+
 
 export default function Header() {
-    const { signInUsingGoogle,user, logOut } = useFirebase()
+  const { signInUsingGoogle, user, logOut } = useAuth();
+
   return (
     <>
-      <Navbar bg="light" expand={false} sticky="top">
+      <Navbar bg="light" collapseOnSelect expand="lg" sticky="top">
         <Container>
-          <Navbar.Brand href="#">Navbar</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
+            <img width="150px" src={logo} alt="Logo" />
+          </Navbar.Brand>
 
-          {/* User Login Check */}
-          {
-              user.displayName ? <>
-                <span>{user.displayName}</span>
-                <Button onClick={logOut}>Log Out</Button>
-              </> : <Button onClick={signInUsingGoogle}>Login</Button>
-          }
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mx-auto">
+              {/* <Nav.Link href="#features">Home</Nav.Link>
+              <Nav.Link href="#pricing">Pricing</Nav.Link> */}
+            </Nav>
 
-          <Navbar.Toggle aria-controls="offcanvasNavbar" />
-          <Navbar.Offcanvas
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-            placement="end"
-          >
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title id="offcanvasNavbarLabel">
-                Navbar
-              </Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action2">Link</Nav.Link>
-              </Nav>
-            </Offcanvas.Body>
-          </Navbar.Offcanvas>
+            {/* User Login Check */}
+            <Nav>
+              {user.displayName ? (
+                <>
+                  <NavDropdown title="Orders" id="collasible-nav-dropdown">
+                    <NavDropdown.Item as={Link} to="order">
+                      My Orders
+                    </NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="manageOrder">
+                      Manage All Orders
+                    </NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="addNewProduct">
+                      Add A New Service
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  <span className="m-2">{user.displayName}</span>
+                  <Button variant="danger" onClick={logOut}>
+                    Log Out
+                  </Button>
+                </>
+              ) : (
+                <Button onClick={signInUsingGoogle}>Login</Button>
+              )}
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </>
