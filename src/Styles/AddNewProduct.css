@@ -26,3 +26,47 @@
   padding: 8px;
   margin: 10px 0;
 }
+.hero-title {
+  font-size: 70px;
+  line-height: 90px;
+}
+.hero-title span {
+  color: #ffc839;
+}
+.recently h6 {
+  color: #9c9ea3;
+  font-weight: 600;
+}
+.flex-style {
+  display: flex;
+  justify-content: space-between;
+}
+.hero-bg {
+  margin-left: 50px;
+}
+
+@media (max-width: 667px) {
+  .hero-title {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  .flex-style {
+    flex-direction: column;
+  }
+  .hero-bg {
+    margin: 0;
+  }
+  .order-page,
+  .mangeOrderPage {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+  }
+  .add-form form {
+    margin: 0px 20px;
+  }
+  .add-form form input,
+  .add-form form textarea {
+    width: 100%;
+  }
+}

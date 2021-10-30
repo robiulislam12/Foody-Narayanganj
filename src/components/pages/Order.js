@@ -28,7 +28,7 @@ export default function Order() {
             <h1>Your All orders Here</h1>
             {
                 orders.map(order => <div key={order.address}>
-                    <div className='d-flex justify-content-between align-items-center bg-light border m-2 px-4 w-50'>
+                    <div className='d-flex justify-content-between align-items-center bg-light border m-2 px-4 lg:m-50 md:w-50 sm-w order-page'>
                         <div>
                             <img width="150px" src={order?.image} alt="" />
                         </div>

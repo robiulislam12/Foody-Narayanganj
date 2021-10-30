@@ -20,7 +20,7 @@ export default function Order() {
             <h1>Manage All orders Here</h1>
             {
                 orders.map(order => <div key={order.address}>
-                    <div className='d-flex justify-content-between align-items-center bg-light border m-2 px-4 w-75'>
+                    <div className='d-flex justify-content-between align-items-center bg-light border m-2 px-4 mangeOrderPage'>
                         <div>
                             <img width="150px" src={order?.image} alt="" />
                         </div>
