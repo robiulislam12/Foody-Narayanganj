@@ -42,7 +42,7 @@ export default function SingleFood() {
           <p>{food.description}</p>
         </Col>
         <Col>
-          <div className="confirm-form py-5 ms-5">
+          <div className="confirm-form py-5">
             <h2 className="fw-bold">Confirm Order</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="pt-3">
               <input
