@@ -7,13 +7,22 @@ export default function Order() {
     useEffect(()=>{
         axios.get('https://blooming-falls-29149.herokuapp.com/orders')
         .then(res => setOrders(res.data))
-    },[])
-
-    const handleDelivered = e =>{
-       let btnText = e.target.innerText;
-       btnText = 'Delivered'
-       e.target.innerText = btnText;
+    },[orders])
+    
+    //Try to delete order
+    const deleteOrder = id =>{
+        const isAgree = prompt('Is it Delivered?  type "Yes"');
+        if(isAgree.toLowerCase() === 'yes'){
+            axios.delete(`https://blooming-falls-29149.herokuapp.com/order/${id}`)
+            .then(res => {
+                if(res.data.deletedCount > 0){
+                    alert('Delivered Successful')
+                }
+            })
+            
+        }
     }
+
     
     return (
         <div className='container py-5'>
@@ -27,7 +36,9 @@ export default function Order() {
                         <div className='d-flex justify-content-between'>
                             <h3>{order?.product_name}</h3>
                             <h4  className='mx-4'>{order?.price}</h4>
-                            <button onClick={handleDelivered} className='btn btn-info'>Pending</button>
+                            <button onClick={()=> deleteOrder(order._id)} className='btn btn-info'>
+                                <span>Pending</span>
+                            </button>
                         </div>
                     </div>
                 </div>)

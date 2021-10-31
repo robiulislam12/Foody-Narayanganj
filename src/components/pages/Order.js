@@ -7,7 +7,7 @@ export default function Order() {
     useEffect(()=>{
         axios.get('https://blooming-falls-29149.herokuapp.com/orders')
         .then(res => setOrders(res.data))
-    },[])
+    },[orders])
 
     //Try to delete order
     const deleteOrder = id =>{
